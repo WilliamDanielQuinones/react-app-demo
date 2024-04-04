@@ -4,6 +4,8 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { MantineProvider, createTheme } from "@mantine/core";
 import { AppRoutes } from "routes";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "settings";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,7 +16,9 @@ const theme = createTheme({});
 function Entrypoint() {
   return (
     <MantineProvider theme={theme}>
-      <AppRoutes />
+      <QueryClientProvider client={queryClient}>
+        <AppRoutes />
+      </QueryClientProvider>
     </MantineProvider>
   );
 }
