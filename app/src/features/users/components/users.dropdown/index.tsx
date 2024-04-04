@@ -11,7 +11,9 @@ interface Props {
 export function UsersDropdown({ users, onUserSelect, loading }: Props) {
   if (!users && !loading)
     return (
-      <Text>Something went wrong fetch users, please try again later.</Text>
+      <Text data-testid="error-text">
+        Something went wrong fetch users, please try again later.
+      </Text>
     );
 
   function renderUserDropdownOptions() {
@@ -32,7 +34,8 @@ export function UsersDropdown({ users, onUserSelect, loading }: Props) {
   return (
     <Autocomplete
       loading={loading}
-      id="combo-box-demo"
+      id="users-dropdown"
+      data-testid="users-dropdown"
       options={renderUserDropdownOptions() || []}
       getOptionLabel={(option) => option.label}
       isOptionEqualToValue={(option, value) => {
