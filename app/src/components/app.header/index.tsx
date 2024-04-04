@@ -1,4 +1,4 @@
-import { ActionIcon, Group, Image, Text, Tooltip, rem } from "@mantine/core";
+import { ActionIcon, Group, Image, Text, Tooltip } from "@mantine/core";
 import Logo from "assets/logo.png";
 import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 
